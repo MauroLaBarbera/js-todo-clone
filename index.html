@@ -8,10 +8,6 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css">
 
-    <!--JS-->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
-    <script src="./js/main.js"></script>
-
     <!--FONT-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" rel="stylesheet">
@@ -21,20 +17,35 @@
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1> My ToDo List</h1>
-    </header>
+    <div class="container">
+        <header>
+            <h1> My ToDo List</h1>
+        </header>
 
-    <main>
-        <input
-         type="text"
-         class="add-ToDo"
-         placeholder="Inserisci cose da fare..."
-         >
-    </main>
+        <main>
+            <input
+            type="text"
+            class="add-ToDo"
+            placeholder="Inserisci cose da fare..."
+            >
 
-</div>
-    
+            <ul class="toDos"></ul>
+        </main>
+    </div>
+        
+
+    <div id="template" style="display: none;">
+        <li class="list-item">
+            <span class="text"></span>
+            <i class="fas fa-eraser"></i>
+        </li>
+    </div>
+
+
+
+
+     <!--JS-->
+     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
+     <script src="./js/main.js"></script>
 </body>
 </html>
