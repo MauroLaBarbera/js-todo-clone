@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Cabin', sans-serif;
+}
+
+body {
+    margin-top: 80px;
+    background: orange;
+}
+
+.container {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.add-ToDo {
+    width: 100%;
+    margin-top: 20px;
+    border: 0;
+    padding: 10px;
+    outline: none;
+    border-radius: 8px;
+    opacity: .75;
+    transition: opacity .3s;
+}
+
+.add-ToDo:hover,
+.add-ToDo:focus {
+    opacity: 1;
+}
