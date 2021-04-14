@@ -33,3 +33,18 @@ body {
 .add-ToDo:focus {
     opacity: 1;
 }
+
+.toDos {
+    list-style: none;
+}
+
+.toDos li {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,.5);
+}
+
+.toDos li:last-child {
+    border: 0;
+}

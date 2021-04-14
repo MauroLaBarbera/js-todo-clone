@@ -33,19 +33,41 @@ var list = $('.toDos');
 var newToDo = $('.add-ToDo');
 var template = $('#template li')
 
-//RIEMPIAMO LA NOSTRA LISTA TODO
-for (var i = 0; i < todoItems.length; i++ ) {
-    var toDo = todoItems[i];
-    console.log(todoItems[i]);
+    //RIEMPIAMO LA NOSTRA LISTA TODO
+    for (var i = 0; i < todoItems.length; i++ ) {
+        var toDo = todoItems[i];
+        //console.log(todoItems[i]);
 
-    //TEMPLATE
-    var item = template.clone();
-    item.find('.text').text(toDo.text);
+        //TEMPLATE
+        var item = template.clone();
+        item.find('.text').text(toDo.text);
 
-    //AGGIUNGIAMO ALLA FINE DELLA LISTA
-    list.append(item);
-};
-console.log(list);
+        //AGGIUNGIAMO ALLA FINE DELLA LISTA
+        list.append(item);
+
+        
+    };
+    //INSERIMENTO NUOVO TODO
+    newToDo.keyup(function(e) {
+        //console.log(e.which);
+
+        if(e.which === 13){
+            //console.log('enter');
+            var text = newToDo.val().trim();
+
+            //VALIDAZIONE
+            if(text !== ''){
+                //console.log(text);
+
+                //TEMPLATE
+                var item = template.clone();
+                item.find('.text').text(text);
+
+                //AGGIUNGIAMO ALLA FINE DELLA LISTA
+                list.append(item);
+            }
+        }
+    });
 
 
 
