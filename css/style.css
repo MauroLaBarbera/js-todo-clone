@@ -6,45 +6,97 @@
 }
 
 body {
+    background: #0f0e17;
+    color: #fffffe;
     margin-top: 80px;
-    background: orange;
-    margin: 0 auto;
-    max-width: 400px;
-    color: #fff;
 }
 
 .container {
+    position: relative;
+    max-width: 700px;
     text-align: center;
+    margin: 0 auto;
+    z-index: 9;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.list {
+    color: #f25f4c;
+}
+
+.new-todo {
+    display: flex;
+}
+
+.new-todo input,
+.new-todo button {
+    outline: none;
+    border: 0;
+    color: #fff;
+}   
+
+
+.new-todo input {
+    flex-grow: 1;
+    height: 30px;
+    background: transparent;
+    border-bottom: 1px solid #888;
+    transition: border .3s;
+}
+
+.new-todo button {
+    padding: 0 30px;
+    text-transform: uppercase;
+    margin-left: 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #f25f4c;
+    transition: background .3s;
+}
+
+.new-todo input:hover {
+    border-bottom: 1px solid #fffffe;
+}
+
+.new-todo button:hover {
+    background: #ff8906;
+}
+
+/* TO DO LIST */
+.todos-container {
+    margin: 40px 0;
+    padding: 15px 30px;
+    background: #fffffe;
+    color: #2e2f3e;
+    box-shadow: 0 15px 10px -10px rgba(255, 255, 255, .3);
+    border-radius: 10px;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #a7a9be;
     
 }
 
-.add-ToDo {
-    width: 100%;
-    margin-top: 20px;
+.todo:last-child {
     border: 0;
-    padding: 10px;
-    outline: none;
-    border-radius: 8px;
-    opacity: .75;
-    transition: opacity .3s;
 }
 
-.add-ToDo:hover,
-.add-ToDo:focus {
-    opacity: 1;
+/* WAVE */
+.wave {
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 
-.toDos {
-    list-style: none;
-}
-
-.toDos li {
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid rgba(255,255,255,.5);
-}
-
-.toDos li:last-child {
-    border: 0;
+.wave.first {
+    bottom: 1%;
+    transform: rotateY(180deg);
 }

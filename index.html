@@ -4,42 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--FAVICON -->
+    <link rel="shortcut icon" text="image/x-icon" href="./favicon.ico">
     <title>ToDo List</title>
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css">
 
     <!--FONT-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" rel="stylesheet">
 
-<!--ICON-->
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' integrity='sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==' crossorigin='anonymous'/>
+    <!--FONTAWESOME-->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' integrity='sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==' crossorigin='anonymous'/>
+    <!-- VUE JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 </head>
 <body>
 
-    <div class="container">
+    <div id="app" class="container">
         <header>
-            <h1> My ToDo List</h1>
+            <h1> My ToDo <span class="list">List</span> </h1>
         </header>
 
-        <main>
+        <section class="new-todo">
             <input
             type="text"
-            class="add-ToDo"
             placeholder="Inserisci cose da fare..."
             >
+            <button>Aggiungi</button>
+        </section>
 
-            <ul class="toDos"></ul>
-        </main>
+        <section class="todos-container">
+            <ul>
+                <li class="todo" v-for="todo in todos">
+                    <span class="text">{{ todo.text }} </span>
+                    <i class="fas fa-times"></i>
+                </li>
+            </ul>
+        </section>
     </div>
-        
 
-    <div id="template" style="display: none;">
-        <li class="list-item">
-            <span class="text"></span>
-            <i class="fas fa-eraser"></i>
-        </li>
-    </div>
+
+    <!-- WAVE -->
+    <svg class="wave first" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill=" #f25f4c" fill-opacity="1" d="M0,96L34.3,128C68.6,160,137,224,206,218.7C274.3,213,343,139,411,101.3C480,64,549,64,617,85.3C685.7,107,754,149,823,154.7C891.4,160,960,128,1029,96C1097.1,64,1166,32,1234,48C1302.9,64,1371,128,1406,160L1440,192L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
+      </svg>
+    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill=" #ff8906" fill-opacity="1" d="M0,96L34.3,128C68.6,160,137,224,206,218.7C274.3,213,343,139,411,101.3C480,64,549,64,617,85.3C685.7,107,754,149,823,154.7C891.4,160,960,128,1029,96C1097.1,64,1166,32,1234,48C1302.9,64,1371,128,1406,160L1440,192L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
+      </svg>
 
 
 
