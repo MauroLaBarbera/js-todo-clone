@@ -100,3 +100,15 @@ h1 {
     bottom: 1%;
     transform: rotateY(180deg);
 }
+
+
+/* COMPLETATO */
+.todo .text.completed {
+    text-decoration: line-through;
+}
+
+.todo .text {
+    position: relative;
+    max-width: 90%;
+    word-wrap: break-word;
+}

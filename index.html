@@ -28,19 +28,30 @@
 
         <section class="new-todo">
             <input
-            type="text"
-            placeholder="Inserisci cose da fare..."
+                type="text"
+                placeholder="Inserisci cose da fare..."
+                v-model.trim="newTodo"
+                @keyup.enter="addTodo"
+                ref="todoInput"
             >
-            <button>Aggiungi</button>
+            <button @click="addTodo">Aggiungi</button>
         </section>
 
         <section class="todos-container">
-            <ul>
-                <li class="todo" v-for="todo in todos">
-                    <span class="text">{{ todo.text }} </span>
-                    <i class="fas fa-times"></i>
+            <ul v-if="todos.length > 0">
+                <li class="todo" v-for="(todo , index) in todos">
+                    <span class="text"
+                        :class="{completed: todo.completed}"
+                        @click="updateStatus(index)"
+                    >
+                        {{ todo.text }}
+                    </span>
+                    <i class="fas fa-times"
+                    @click="removeTodo(index)"
+                    ></i>
                 </li>
             </ul>
+            <h2 v-else> Al momento non c'è nulla da fare..</h2>
         </section>
     </div>
 
